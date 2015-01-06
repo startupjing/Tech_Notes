@@ -11,60 +11,84 @@ Contents:
 
 ### R Objects and Attributes
 1. Atomic classes of objects
+
 * character
 * numeric
 * integer
 * complex
 * logical
+
 2. Most Basic Objects
+
 * vector: only contain objects of the same class
 * list: contain objects of different classes
+
 3. Numbers
+
 * usually treated as double precision real numbers
 * specify **L** suffix to get integer (i.e.`1L` gives integer 1)
 * special number: Inf, NaN
+
 4. Attributes
+
 * examples: names, dimnames, dimensions, class, length, user*defined metadata
 * accesss using `attributes()` function
 
 ### Vectors 
 1. creating vectors
+
 * use `c()` function: `x<*c(1,2,3)`
 * use `vector()` function: `x<*vector("numeric",length=10)`
+
 2. mixing objects
+
 * coercion such that each element is of the same class; nonsensical coercion results in NA
 * explicit coercion: `as.numeric(x)`, `as.logical(x)`, or `as.character(x)`
 
 ### Lists
 1. creating lists
+
 * use `list()` function: `x<*list(1,"a",TRUE,1+4i)`
 
 ### Matrices
 1. creating matrix
+
 * initialize: `m<*matrix(nrow=2,ncol=3)`
 * construct column*wise: `m<*matrix(1:6, nrow=2, ncol=3)`
 * create from vector by adding dimension: `m<*1:10` and `dim(m)<*c(2,5)`
+
 2. attributes
+
 * `attributes(m)`
 * `dim(m)`
+
 3. binding vectors
+
 * column*binding: `cbind(x,y)`
 * row*binding: `rbind(x,y)`
 
 ### Factors
 1. creating factors
+
 * default level: `x<*factor(c("yes","no","yes"))`
 * change order of level: `x<*factor(c("yes","no","yes"), levels=c("yes","no"))`
+
 2. display
+
 * `table(x)`
+
 3. unclass
+
 * `unclass(x)`
 
 ### Missing Values
 1. properties
+
 * NA values have a class(i.e. integer NA, character NA, etc)
 * NaN value is also NA but the converse is not true
+
 2. testing
+
 * test NA: `is.na()`
 * test NaN: `is.nan()`
 
@@ -77,8 +101,10 @@ Contents:
 
 ### Names
 1. names for vectors
+
 * `x<*1:3` and `names(x)<*c("foo","bar","norf")`
 * `names(x)`
+
 2. names for lists
 * `x<*list(a=1, b=2, c=3)`
 3. names for matrices
