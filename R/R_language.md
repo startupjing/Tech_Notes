@@ -4,6 +4,7 @@ Contents:
 
 - [Data Types](#Data Types)
 - [Reading Data](#Reading Data)
+- [Sequence and Numbers](#Sequence and Numbers)
 - [Subsetting](#Subsetting)
 - [Control Structure](#Control Structure)
 - [Function](#Function)
@@ -11,6 +12,8 @@ Contents:
 - [Loop Functions](#Loop Function)
 - [str Function](#str Function)
 - [Simulation](#Simulation)
+- [Workspace](#Workspace)
+
 
 <a name="Data Types"/>
 
@@ -38,10 +41,14 @@ Contents:
 + creating vectors
   - use `c()` function: `x<-c(1,2,3)`
   - use `vector()` function: `x<-vector("numeric",length=10)`
+  - unique elements: `unique(c(1,2,2,3,4))`
 + mixing objects
   - coercion such that each element is of the same class; nonsensical coercion results in NA
   - explicit coercion: `as.numeric(x)`, `as.logical(x)`, or `as.character(x)`
-
++ character vector
+  - join vectors: `paste(my_char,collapse=" ")`
+  - join words: `paste(w1,w2,sep=" ")`
+  - join multiple vectors: `paste(1:3,c("a","b","c"),sep="")`
 ### Lists
 + creating lists
   - use `list()` function: `x<-list(1,"a",TRUE,1+4i)`
@@ -74,6 +81,7 @@ Contents:
 + testing 
   - test NA: `is.na()`
   - test NaN: `is.nan()`
+  - number of NA: `sum(is.na(data))`
 
 ### Data Frames
 + creating data frames
@@ -81,6 +89,10 @@ Contents:
   - `x<-data.frame(foo=1:4,bar=c(T,T,F,F))`
 + attributes
   - `nrow(x)` and `ncol(x)`
+  - column names: `colnames(my_frame)`, `colnames<-c(col1,col2)`
++ read partial data
+  - head: `head(data,row)`
+  - tail: `tail(data,row)`
 
 ### Names
 + names for vectors
@@ -122,6 +134,8 @@ Contents:
   - read some lines: `initial<-read.table("file.txt", nrows=100)`
   - find class: `classes<-sapply(initial,class)`
   - set colClasses value: `tabAll<-read.table("file.txt", colClasses=classes)`
++ data size
+  - `object.size(data)`
 + set nrows
   - use Unix tool `wc` to count number of lines in the file
 + compute memory requirement
@@ -149,6 +163,24 @@ Contents:
   - make connections: `con <- gzfile("words.gz")` or `con<-url("http://www.jhsph.edu","r")`
   - reading lines: `x <- readLines(con, 10)`
 
+
+<a name="Sequence and Numbers"/>
+
+## Sequence and Numbers
+### seqeunce
++ operator `:`
+  - `from:to`
++ function `seq()`
+  - `seq(from,to,by=0.1)`
+  - `seq(from,to,length=10)`
+  - `1:length(miser)` is same as `seq(along.with=myseq)` or `seq_along(myseq)`
+  
+### replicate
++ function `rep()`
+  - `rep(c(1,2),times=40)`
+  - `rep(c(1,2),each=10)`
+  
+
 <a name="Subsetting"/>
 
 ## Subsetting
@@ -158,6 +190,23 @@ Contents:
 + `[[` extracts elements of a list or a data frame; returns a single element
 + `$` extracts elements of a list or data frame by names
 
+### Vectors
++ basic
+  - `x[from:to]`
++ logical statement
+  - `x[condition1 & condition2]`
+  - get indices: `which(x>10)`
+  - boolean result: `any(x>0)`, `all(x>0)`
++ random indexing
+  - `x[c(idx1,idx2)]`
+  - except some indices: `x[c(-idx1,-idx2)]` or `x[-c(idx1,idx2)]`
++ names
+  - `names(vect)`
+  - assign names: `names(vet)<-c("name1","name2")`
++ check identical
+  - `identical(vect1,vect2)`
+  
+  
 ### Lists
 + Basic
   - `x <- list(foo=1:4, bar=0.6)`
@@ -298,6 +347,7 @@ Contents:
 
 ### operations on dates and times
 + need same class to compare
++ use `difftime()` function: `difftime(Sys.time(),t1,units="days")`
 + use mathematical operations
 + can change timezone
   
@@ -364,7 +414,14 @@ Contents:
 + usage
   - vector: `x <- c(rnorm(10),runif(10),rnorm(10,1))`
   - create groups: `f <- gl(3,10)`
-  - `tapply(x,f,mean)` or `tapply(x,f,range)`
+  - apply function on x within group f: `tapply(x,f,mean)` or `tapply(x,f,range)`
+  
+  
+### vapply
++ motivation
+  - specify the format of result
++ usage
+  - single number: `vapply(data,function,numeric(1))`
   
 ### split
 + take a vector or other objects and split into groups determined by a factor or a list of factors
@@ -433,7 +490,9 @@ Contents:
   - set seed to ensure reproducibility
   - use any seed number: `set.seed(1)`
   - always set seed when doing simulation
-  
++ repeat generation
+  - `replicate(100,rpois(5,10))`
+
 ### generate from models
 + linear model
   - `set.seed(20)`
@@ -452,9 +511,35 @@ Contents:
   - set seed `set.seed(1)`
   - without replacement: `sample(1:10,4)`
   - permutation `sample(1:10)`
-  - with replacement: `sample(1:10,replace=TRUE)`
+  - with replacement: `sample(1:10,4,replace=TRUE)`
+  - with probability: `sample(c(0,1),100,replace=TRUE,prob=c(0.3,0.7))`
 + drawing from probability distribution with r* function
 
+
+<a name="Workspace"/>
+
+## Workspace
+### directory
++ list files
+  - `list.files()`
+  - recursively: `list.files(recursive=TRUE)`
++ directory operation
+  - `getwd()` and `setwd(dir)`
+  - `dir.create()`
+  - create subdirectory: `dir.create("current/subdirectory",recursive=TRUE)`
+  - delete: `unlink(dir,recursive=TRUE)`
++ file
+  - create: `file.create(filename)`
+  - check existence: `file.exists(filename)`
+  - get info: `file.info(filename)`
+  - rename: `file.rename(from,to)`
+  - copy: `file.copy(from,to)`
+  - full path: `file.path(filename)`
+  
+  
+### documentation
++ function: `args(function)`, `?function`
++ operator: `?[backtick]operator[backtick]`
 
 
 
