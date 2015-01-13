@@ -332,7 +332,7 @@ Contents:
 + two classes
   - POSIXct: large integer, useful for data frame
   - POSIXlt: store a bunch of useful information
-+ POSIXct usage
++ POSIXlt usage
   - create time: `x <- Sys.time()`
   - create class: `p <- as.POSIXlt(x)`
   - get information: `names(unclass(p))` and `p$sec`
