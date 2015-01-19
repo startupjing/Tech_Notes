@@ -24,10 +24,10 @@ Contents:
 + tags 
   - `<tagname>Contents</tagname>`
   - void element: `<tagname />`
-  - optional closing tag: <p>, <tbody>, <li>
+  - optional closing tag: `<p>`, `<tbody>`, `<li>`
 + attributes
   - `<tag attribute="value">Content</tag>`
-  - `<tag attribute="value" />
+  - `<tag attribute="value" />`
 
 
 <a name="Common tags"/>
@@ -42,7 +42,7 @@ Contents:
   - `<form>`
     - `<input type="text/number/date/radio/etcetera" name="name"/>`
     - `<label for="input-id">`
-    - `<select name="name">` and <option value="value">`
+    - `<select name="name">` and `<option value="value">`
     - `<textarea name="">`
 
 + external media 
@@ -81,11 +81,14 @@ Contents:
 
 ## Forms
 + example
+
   ```
+  `
     <form action="http://example.com/search" method="GET">
     	<label>Search: <input type="text" name="q" /></label>
     	<input type="submit" value="search"/>
     </form>
+
   ```
 + HTTP request method
   - GET: transfer variables in the URL
