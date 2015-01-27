@@ -69,7 +69,7 @@ Contents:
 
 + other
   - hyperlink `<a href="destination">`
-  - line break `<br />
+  - line break `<br />`
   - `<button>`
   - `<code>`
   - `<output>`
