@@ -167,7 +167,7 @@ Contents:
 <a name="Sequence and Numbers"/>
 
 ## Sequence and Numbers
-### seqeunce
+### sequence
 + operator `:`
   - `from:to`
 + function `seq()`
@@ -460,7 +460,7 @@ Contents:
    - `summary(x)` or `str(x)`
 + data frame
    -`library(datasets)`
-   - `head(airquiality)` and `str(airquality)`
+   - `head(airquality)` and `str(airquality)`
    - `str(split(airquality,airquality$Month))`
 + matrix
    
@@ -506,7 +506,7 @@ Contents:
   - `y<-rpois(100,exp(log.mu))`
 
 ### random sampling
-+ draw randomly from a specified set of scaler objects
++ draw randomly from a specified set of scalar objects
 + usage
   - set seed `set.seed(1)`
   - without replacement: `sample(1:10,4)`
