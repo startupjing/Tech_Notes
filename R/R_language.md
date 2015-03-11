@@ -2,20 +2,20 @@
 
 Contents:
 
-- [Data Types](#Data Types)
-- [Reading Data](#Reading Data)
-- [Sequence and Numbers](#Sequence and Numbers)
+- [Data Types](#Data-Types)
+- [Reading Data](#Reading-Data)
+- [Sequence and Numbers](#Sequence-and-Numbers)
 - [Subsetting](#Subsetting)
-- [Control Structure](#Control Structure)
+- [Control Structure](#Control-Structure)
 - [Function](#Function)
-- [Data and Time](#Date and Time)
-- [Loop Functions](#Loop Function)
-- [str Function](#str Function)
+- [Data and Time](#Date-and-Time)
+- [Loop Functions](#Loop-Function)
+- [str Function](#str-Function)
 - [Simulation](#Simulation)
 - [Workspace](#Workspace)
 
 
-<a name="Data Types"/>
+<a name="Data-Types"/>
 
 ## Data Types
 
@@ -103,7 +103,7 @@ Contents:
 + names for matrices
   - `m<-matrix(1:4, nrow=2, ncol=2)` and `dimnames<-list(c("r1","r2"), c("c1","c2"))`
 
-<a name="Reading Data"/>
+<a name="Reading-Data"/>
 
 ## Reading Data
 
@@ -164,7 +164,7 @@ Contents:
   - reading lines: `x <- readLines(con, 10)`
 
 
-<a name="Sequence and Numbers"/>
+<a name="Sequence-and-Numbers"/>
 
 ## Sequence and Numbers
 ### sequence
@@ -248,7 +248,7 @@ Contents:
   - `good <- complete.cases(airquality)`
   - `airquality[good, ][1:6, ]`
 
-<a name="Control Structure"/>
+<a name="Control-Structure"/>
 
 ## Control Structure
 
@@ -319,7 +319,7 @@ Contents:
   - `paste("a","b",sep=":")` not `paste("a","b",se=":")`
 
 
-<a name="Date and Time"/>
+<a name="Date-and-Time"/>
 
 ## Date and Time
 
@@ -351,7 +351,7 @@ Contents:
 + use mathematical operations
 + can change timezone
   
-<a name="Loop Functions"/>
+<a name="Loop-Functions"/>
 
 ## Loop Functions
 
@@ -444,7 +444,7 @@ Contents:
   - drop empty levels: `str(split(x,list(f1,f2)), drop=TRUE)`
  
  
-<a name="str Function"/>
+<a name="str-Function"/>
 
 ## str Function
 

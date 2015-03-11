@@ -2,10 +2,10 @@
 
 Contents:
 
-- [Scoping Rules](#Scoping Rules)
+- [Scoping Rules](#Scoping-Rules)
 
 
-<a name="Scoping Rules"/>
+<a name="Scoping-Rules"/>
 
 ## Scoping Rules
 
