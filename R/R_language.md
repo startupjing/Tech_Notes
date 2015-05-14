@@ -342,7 +342,7 @@ Contents:
   
 ### formatting times
 + use strptime function
-  - create date string: `detesting <- c("January 10, 2012 10:40", "December 9, 2011 9:10")
+  - create date string: datestring <- c("January 10, 2012 10:40", "December 9, 2011 9:10")
   - format: `x <- strptime(datestring, "%B %d, %Y %H:%M")`
 
 ### operations on dates and times
