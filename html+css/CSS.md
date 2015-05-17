@@ -17,12 +17,13 @@ Contents:
 + composed of rules
   - each rule has a selector and some declarations
   - example
-  ``` 
-    header{
-       color: blue;
-       font-family: Verdana, sans-serif;
-    }
-  ```
+  
+```css 
+header{
+  color: blue;
+  font-family: Verdana, sans-serif;
+}
+```
 
 <a name="Selectors"/>
 
