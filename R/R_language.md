@@ -49,6 +49,7 @@ Contents:
   - join vectors: `paste(my_char,collapse=" ")`
   - join words: `paste(w1,w2,sep=" ")`
   - join multiple vectors: `paste(1:3,c("a","b","c"),sep="")`
+
 ### Lists
 + creating lists
   - use `list()` function: `x<-list(1,"a",TRUE,1+4i)`
