@@ -9,7 +9,7 @@ Contents:
 - [Control Structure](#Control-Structure)
 - [Function](#Function)
 - [Data and Time](#Date-and-Time)
-- [Loop Functions](#Loop-Function)
+- [Loop Functions](#Loop-Functions)
 - [str Function](#str-Function)
 - [Simulation](#Simulation)
 - [Workspace](#Workspace)
@@ -49,6 +49,7 @@ Contents:
   - join vectors: `paste(my_char,collapse=" ")`
   - join words: `paste(w1,w2,sep=" ")`
   - join multiple vectors: `paste(1:3,c("a","b","c"),sep="")`
+
 ### Lists
 + creating lists
   - use `list()` function: `x<-list(1,"a",TRUE,1+4i)`
