@@ -82,6 +82,7 @@ Contents:
   - test NA: `is.na()`
   - test NaN: `is.nan()`
   - number of NA: `sum(is.na(data))`
+  - `summary(data)` provides the count of NA's for each variable in the dataframe
 
 ### Data Frames
 + creating data frames
